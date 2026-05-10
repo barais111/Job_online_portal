@@ -1,73 +1,150 @@
-# React + TypeScript + Vite
+# 💼 Job Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A smart and simple **Job Portal Web Application** built with **PHP Laravel** and **MySQL** — designed to connect job seekers with employers in a clean, responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Project Overview
 
-## React Compiler
+This web application allows job seekers to browse and apply for jobs, while employers can post job listings and manage applications — all in one platform.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔐 User Registration & Login (Job Seeker / Employer)
+- 📋 Job Listings with Search & Filter
+- 📝 Job Posting by Employers
+- 📨 Job Application by Seekers
+- 🛠️ Admin Panel to Manage Users & Jobs
+- 📱 Responsive Design (Mobile & Desktop)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Technology | Usage |
+|---|---|
+| PHP Laravel | Backend Framework |
+| MySQL | Database |
+| Blade Templates | Frontend Views |
+| Bootstrap / Tailwind | UI Styling |
+| Composer | PHP Dependency Manager |
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js & npm (for frontend assets)
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/job-portal.git
+cd job-portal
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install PHP dependencies**
+```bash
+composer install
 ```
+
+3. **Install Node dependencies**
+```bash
+npm install
+```
+
+4. **Create environment file**
+```bash
+cp .env.example .env
+```
+
+5. **Generate application key**
+```bash
+php artisan key:generate
+```
+
+6. **Configure your database in `.env`**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=job_portal
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+7. **Run database migrations**
+```bash
+php artisan migrate
+```
+
+8. **Seed the database (optional)**
+```bash
+php artisan db:seed
+```
+
+9. **Build frontend assets**
+```bash
+npm run dev
+```
+
+10. **Start the development server**
+```bash
+php artisan serve
+```
+
+Visit: `http://localhost:8000`
+
+---
+
+## 📁 Project Structure
+
+```
+job-portal/
+├── app/
+│   ├── Http/Controllers/
+│   └── Models/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   └── views/
+├── routes/
+│   └── web.php
+├── public/
+├── .env.example
+├── composer.json
+└── README.md
+```
+
+---
+
+## 🔑 Default Credentials (after seeding)
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | admin@jobportal.com | password |
+| Employer | employer@jobportal.com | password |
+| Job Seeker | seeker@jobportal.com | password |
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 👨‍💻 Author
+Anushka Barai
+GitHub:barais111(https://github.com/barais111)
+
